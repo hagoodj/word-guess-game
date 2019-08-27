@@ -28,16 +28,26 @@ console.log(correctLetters)
 
 
 
-// // function runs everytime a key is pressed
-// document.onkeypress = function (guess) {
+// function runs everytime a key is pressed
+document.onkeypress = function (guess) {
     
-//     // storing the key pressed in a variable
-//     var selectedLetter = guess.key;
+    // storing the key pressed in a variable
+    var selectedLetter = guess.key;
 
-//     // checking stored variables
-//     console.log("computerLetter: " + computerWord);
-//     console.log("selectedLetter: " + selectedLetter);
-//     console.log("***");
+    // checking stored variables
+    console.log("computerWord: " + computerWord);
+    console.log("selectedLetter: " + selectedLetter);
+    console.log("***");
+
+    for (i = 0; i < computerWord.length; i++) {
+
+        if (computerWord[i] === selectedLetter) {
+            correctLetters[i] = selectedLetter;
+            document.getElementById("correctLetters").innerHTML = correctLetters.join(' ');
+        };
+
+    };
+
 
 //     // what happens when user guesses the computer letter
 //         wins++;
@@ -70,4 +80,4 @@ console.log(correctLetters)
 //         console.log(computerLetter);
 //     }
 
-// }
+};
