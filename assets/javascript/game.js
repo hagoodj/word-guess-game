@@ -37,6 +37,7 @@ document.onkeypress = function (guess) {
     
     // storing the key pressed in a variable
     var selectedLetter = guess.key;
+    selectedLetter = selectedLetter.toLowerCase();
     
     // checking stored variables
     console.log("computerWord: " + computerWord);
