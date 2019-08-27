@@ -24,9 +24,6 @@ for (i = 0; i < computerWord.length; i++) {
 }
 // document.getElementById("correctLetters").innerHTML = correctLetters;
 console.log(correctLetters)
- 
-
-
 
 // function runs everytime a key is pressed
 document.onkeypress = function (guess) {
@@ -62,7 +59,7 @@ document.onkeypress = function (guess) {
         document.getElementById("guessesRemaining").innerHTML = "Guesses Remaining: " + guessesRemaining;
         lettersGuessed = [];
         document.getElementById("lettersGuessed").innerHTML = "Letters Already Guessed: " + lettersGuessed;
-        computerWord = wordList[Math.floor(Math.random() * 4)];
+        computerWord = wordList[Math.floor(Math.random() * wordList.length)];
         correctLetters = [];
         for (i = 0; i < computerWord.length; i++) {
             correctLetters[i]= "_";
@@ -77,7 +74,7 @@ document.onkeypress = function (guess) {
         document.getElementById("guessesRemaining").innerHTML = "Guesses Remaining: " + guessesRemaining;
         lettersGuessed = [];
         document.getElementById("lettersGuessed").innerHTML = "Letters Already Guessed: " + lettersGuessed;
-        computerWord = wordList[Math.floor(Math.random() * 4)];
+        computerWord = wordList[Math.floor(Math.random() * wordList.length)];
         correctLetters = [];
         for (i = 0; i < computerWord.length; i++) {
             correctLetters[i]= "_";
