@@ -45,41 +45,49 @@ document.onkeypress = function (guess) {
 
     };
 
-    if (computerWord.indexOf(selectedLetter) === -1) {
-        guessesRemaining--;
-        document.getElementById("guessesRemaining").innerHTML = "Guesses Remaining: " + guessesRemaining;
-        lettersGuessed.push(selectedLetter);
-        document.getElementById("lettersGuessed").innerHTML = "Letters Already Guessed: " + lettersGuessed;
-    };
+    if (lettersGuessed.indexOf(selectedLetter) !== -1) {
+        alert("You've already guessed that letter! Try picking another one.")
+    }
 
-    if (computerWord === correctLetters.join('')) {
-        wins++;
-        document.getElementById("wins").innerHTML = "Wins: " + wins;
-        guessesRemaining = 10;
-        document.getElementById("guessesRemaining").innerHTML = "Guesses Remaining: " + guessesRemaining;
-        lettersGuessed = [];
-        document.getElementById("lettersGuessed").innerHTML = "Letters Already Guessed: " + lettersGuessed;
-        computerWord = wordList[Math.floor(Math.random() * wordList.length)];
-        correctLetters = [];
-        for (i = 0; i < computerWord.length; i++) {
-            correctLetters[i]= "_";
-            document.getElementById("correctLetters").innerHTML = correctLetters.join(' ');
-        }
-    };
+    if (lettersGuessed.indexOf(selectedLetter) === -1) { 
 
-    if (guessesRemaining === 0) {
-        losses++;
-        document.getElementById("losses").innerHTML = "Losses: " + losses;
-        guessesRemaining = 10;
-        document.getElementById("guessesRemaining").innerHTML = "Guesses Remaining: " + guessesRemaining;
-        lettersGuessed = [];
-        document.getElementById("lettersGuessed").innerHTML = "Letters Already Guessed: " + lettersGuessed;
-        computerWord = wordList[Math.floor(Math.random() * wordList.length)];
-        correctLetters = [];
-        for (i = 0; i < computerWord.length; i++) {
-            correctLetters[i]= "_";
-            document.getElementById("correctLetters").innerHTML = correctLetters.join(' ');
-        }
+        if (computerWord.indexOf(selectedLetter) === -1) {
+            guessesRemaining--;
+            document.getElementById("guessesRemaining").innerHTML = "Guesses Remaining: " + guessesRemaining;
+            lettersGuessed.push(selectedLetter);
+            document.getElementById("lettersGuessed").innerHTML = "Letters Already Guessed: " + lettersGuessed;
+        };
+    
+        if (computerWord === correctLetters.join('')) {
+            wins++;
+            document.getElementById("wins").innerHTML = "Wins: " + wins;
+            guessesRemaining = 10;
+            document.getElementById("guessesRemaining").innerHTML = "Guesses Remaining: " + guessesRemaining;
+            lettersGuessed = [];
+            document.getElementById("lettersGuessed").innerHTML = "Letters Already Guessed: " + lettersGuessed;
+            computerWord = wordList[Math.floor(Math.random() * wordList.length)];
+            correctLetters = [];
+            for (i = 0; i < computerWord.length; i++) {
+                correctLetters[i]= "_";
+                document.getElementById("correctLetters").innerHTML = correctLetters.join(' ');
+            }
+        };
+    
+        if (guessesRemaining === 0) {
+            losses++;
+            document.getElementById("losses").innerHTML = "Losses: " + losses;
+            guessesRemaining = 10;
+            document.getElementById("guessesRemaining").innerHTML = "Guesses Remaining: " + guessesRemaining;
+            lettersGuessed = [];
+            document.getElementById("lettersGuessed").innerHTML = "Letters Already Guessed: " + lettersGuessed;
+            computerWord = wordList[Math.floor(Math.random() * wordList.length)];
+            correctLetters = [];
+            for (i = 0; i < computerWord.length; i++) {
+                correctLetters[i]= "_";
+                document.getElementById("correctLetters").innerHTML = correctLetters.join(' ');
+            };
+        };
+
     };
 
 };
