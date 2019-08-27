@@ -27,12 +27,17 @@ for (i = 0; i < computerWord.length; i++) {
 // document.getElementById("correctLetters").innerHTML = correctLetters;
 console.log(correctLetters)
 
+function myFunction() {
+    var x = document.getElementById("fname");
+    x.value = "";
+  }
+
 // function runs everytime a key is pressed
 document.onkeypress = function (guess) {
     
     // storing the key pressed in a variable
     var selectedLetter = guess.key;
-
+    
     // checking stored variables
     console.log("computerWord: " + computerWord);
     console.log("selectedLetter: " + selectedLetter);
