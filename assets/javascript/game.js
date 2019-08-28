@@ -88,6 +88,8 @@ document.onkeypress = function (guess) {
             };
         
             if (guessesRemaining === 0) {
+                alert("Nope. The word was: " + computerWord)
+                alert("Try again!")
                 losses++;
                 document.getElementById("losses").innerHTML = "Losses: " + losses;
                 guessesRemaining = 10;
