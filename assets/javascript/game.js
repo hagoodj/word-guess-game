@@ -12,7 +12,7 @@ document.getElementById("guessesRemaining").innerHTML = "Guesses Remaining: " + 
 document.getElementById("lettersGuessed").innerHTML = "Letters Already Guessed: " + lettersGuessed;
 
 // define alphabet array and selecting a random letter
-var wordList = ["apple", "yellow", "people", "giraffe", "sock", "table", "africa", "jellybean", "building", "death", "drink", "storm"];
+var wordList = ["apple", "yellow", "people", "giraffe", "sock", "table", "africa", "jellybean", "building", "death", "drink", "storm", "tight", "windows", "left", "press", "underneath", "lunch"];
 var computerWord = wordList[Math.floor(Math.random() * wordList.length)];
 
 var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
